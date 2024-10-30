@@ -143,6 +143,9 @@ progress::-moz-progress-bar {
 
 /* Additional responsive styles */
 @media (max-width: 768px) {
+  body{
+    margin: 10px;
+  }
   #about {
     flex-direction: column; 
     align-items: center;
