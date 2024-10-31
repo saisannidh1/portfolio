@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 :root {
     --accent-color: #3498db;
@@ -8,11 +9,17 @@
     --card-bg: #fff;
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --header-height: 6rem;
 }
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth; /* if you don't already have this */
+    scroll-padding-top: var(--header-height);
+}
 
 body {
     font-family: "Courier Prime", monospace;
@@ -92,24 +99,83 @@ main {
     border: 4px solid var(--accent-color);
 }
 
-.skills-grid {
+#skills {
+    padding: 4rem 2rem;
+
+}
+
+.h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ffffff;
+    position: relative;
+}
+
+
+.skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skill-card {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 2rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--hover-shadow);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.skill-card h3 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.skill-tag {
+    background: #e3f2fd;
+    color: #0984e3;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: #0984e3;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
 }
 
 .projects {
@@ -164,6 +230,46 @@ footer {
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-container button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.filter-container button:hover,
+.filter-container button:focus {
+    background-color: #0984e3;
+    color: white;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.scroll-top-btn:hover {
+    background-color: #074e81;
 }
 
 @media (max-width: 768px) {
