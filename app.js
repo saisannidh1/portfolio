@@ -65,36 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Add a simple filter functionality
-    const skillCards = document.querySelectorAll('.skill-card');
-    const filterButtons = [{name: 'All', filter: '*'}, {name: 'Languages', filter: 'Languages'}, {
-        name: 'Frameworks',
-        filter: 'Frameworks'
-    }, {name: 'Tools', filter: 'Tools'}, {name: 'Databases', filter: 'Databases'}];
 
-    // Create filter buttons
-    const filterContainer = document.createElement('div');
-    filterContainer.className = 'filter-container';
-    filterButtons.forEach(button => {
-        const btn = document.createElement('button');
-        btn.textContent = button.name;
-        btn.addEventListener('click', () => filterSkills(button.filter));
-        filterContainer.appendChild(btn);
-    });
-
-    // Insert filter buttons before the skills container
-    const skillsContainer = document.querySelector('.skills-container');
-    skillsContainer.parentNode.insertBefore(filterContainer, skillsContainer);
-
-    function filterSkills(filter) {
-        skillCards.forEach(card => {
-            if (filter === '*' || card.querySelector('h3').textContent === filter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
 
     // Optional: Add a scroll-to-top button
     const scrollBtn = document.createElement('button');
