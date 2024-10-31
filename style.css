@@ -221,7 +221,9 @@ footer {
     img.profile {
         margin-bottom: 20px;
     }
-
+    header{
+        position: static;
+    }
     header nav a {
         display: block;
         margin: 5px 0;
