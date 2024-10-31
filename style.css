@@ -47,27 +47,36 @@ h3 {
     font-size: 1.5em;
 }
 
-/* Header Styles */
 header {
-    display: flex;
-    justify-content: center; /* Center the nav items */
-    padding: 10px 0; /* Add some padding */
+    display: block;
+    justify-content: space-between; /* Space between the menu toggle and nav */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Add some padding */
     background-color: #333; /* Dark background for contrast */
+    position: sticky;
 }
 
-nav a {
+.nav {
+    display: flex; /* Default to horizontal layout */
+}
+
+.nav a {
     color: white; /* White text for visibility */
     margin: 0 15px; /* Space between links */
     text-decoration: none; /* Remove underline */
 }
 
-nav a:hover {
-    text-decoration: underline; /* Underline on hover for feedback */
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+    flex-direction: column; /* Stack the bars vertically */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
-/* Add this to ensure all elements use border-box */
-*, *:before, *:after {
-    box-sizing: inherit;
+.bar {
+    height: 3px; /* Height of the bar */
+    width: 25px; /* Width of the bar */
+    background-color: white; /* Color of the bar */
+    margin: 3px 0; /* Space between bars */
 }
 
 /* Adjust the main content area */
@@ -269,13 +278,23 @@ footer {
         margin-bottom: 20px;
     }
 
-    header {
-        position: static;
+    .nav {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position it absolutely */
+        top: 60px; /* Position below the header */
+        left: 0; /* Align to the left */
+        background-color: #333; /* Background color */
+        width: 100%; /* Full width */
+        z-index: 10; /* Ensure it appears above other content */
     }
 
-    header nav a {
-        display: block;
-        margin: 5px 0;
+    .nav.active {
+        display: flex; /* Show nav when active */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the menu toggle on mobile */
     }
 
     progress {
@@ -287,8 +306,3 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-}

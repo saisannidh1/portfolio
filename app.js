@@ -28,3 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
   //listener for the button
   toggleButton.addEventListener('click', toggleDarkMode);
 });
+
+// app.js
+
+document.getElementById('mobile-menu').addEventListener('click', function() {
+  const nav = document.querySelector('.nav');
+  nav.classList.toggle('active'); // Toggle the active class
+});
