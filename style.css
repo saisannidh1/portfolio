@@ -289,6 +289,26 @@ footer .social-links{
 .scroll-top-btn:hover {
     background-color: #074e81;
 }
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and email */
+}
+
+.contact i {
+    color: #0077B5; /* Example color, adjust as needed */
+}
+
+.contact a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #0077B5; /* Color change on hover, adjust as needed */
+    text-decoration: underline;
+}
 
 @media (max-width: 768px) {
     .mobile-menu {
