@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(scrollBtn);
 
     window.addEventListener('scroll', function () {
+        // noinspection JSDeprecatedSymbols
         if (window.pageYOffset > 300) {
             scrollBtn.style.display = 'block';
         } else {
