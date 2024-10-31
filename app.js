@@ -1,4 +1,4 @@
-// Function to toggle dark mode
+//toggle dark mode
 function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 
@@ -6,15 +6,15 @@ function toggleDarkMode() {
   const icon = toggleButton.querySelector('i');
 
   if(document.body.classList.contains('dark-mode')) {
-    icon.classList.replace('fa-sun', 'fa-moon');
+    icon.classList.replace('fa-moon', 'fa-sun');  // Changed this line
     localStorage.setItem('darkMode', 'enabled');
   } else {
-    icon.classList.replace('fa-moon', 'fa-sun');
+    icon.classList.replace('fa-sun', 'fa-moon');  // Changed this line
     localStorage.setItem('darkMode', 'disabled');
   }
 }
 
-// Check for saved dark mode preference when page loads
+//check for saved dark mode preference
 document.addEventListener('DOMContentLoaded', () => {
   const darkModePreference = localStorage.getItem('darkMode');
   const toggleButton = document.getElementById('darkModeToggle');
@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (darkModePreference === 'enabled') {
     document.body.classList.add('dark-mode');
-    icon.classList.replace('fa-sun', 'fa-moon');
+    icon.classList.replace('fa-moon', 'fa-sun');  // Changed this line
   }
 
-  // Add click event listener to the button
+  //listener for the button
   toggleButton.addEventListener('click', toggleDarkMode);
 });
