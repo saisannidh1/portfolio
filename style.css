@@ -255,23 +255,23 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
+/* Responsive Design
 @media (max-width: 768px) {
     body {
         margin: 10px;
     }
 
     #about {
-        flex-direction: column; /* Change to column for larger screens */
+        flex-direction: column;
     }
 
     .about-content {
-        flex-direction: column; /* Change to column for larger screens */
+        flex-direction: column;
     }
 
     .about-content img.profile {
-        margin-right: 0; /* Remove right margin on larger screens */
-        margin-bottom: 20px; /* Space between image and text on larger screens */
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 
     img.profile {
@@ -279,22 +279,22 @@ footer {
     }
 
     .nav {
-        display: none; /* Hide navigation links by default */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute; /* Position it absolutely */
-        top: 60px; /* Position below the header */
-        left: 0; /* Align to the left */
-        background-color: #333; /* Background color */
-        width: 100%; /* Full width */
-        z-index: 10; /* Ensure it appears above other content */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        z-index: 10;
     }
 
     .nav.active {
-        display: flex; /* Show nav when active */
+        display: flex;
     }
 
     .menu-toggle {
-        display: flex; /* Show the menu toggle on mobile */
+        display: flex;
     }
 
     progress {
@@ -305,4 +305,4 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
+*/
