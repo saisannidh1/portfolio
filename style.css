@@ -27,7 +27,7 @@ header {
   top: 0;
   background-color: #fff; 
   z-index: 10; 
-  width: 75%;
+  width: 100%;
 }
 
 /* Style the navigation links in the header */
