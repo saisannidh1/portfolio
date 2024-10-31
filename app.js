@@ -12,7 +12,9 @@ function toggleDarkMode() {
   }
 }
 
+// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
+  // Dark mode initialization (previous code)
   const darkModePreference = localStorage.getItem('darkMode');
   const toggleButton = document.getElementById('darkModeToggle');
   const icon = toggleButton.querySelector('i');
@@ -23,4 +25,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   toggleButton.addEventListener('click', toggleDarkMode);
+
+  // Mobile menu functionality
+  const mobileMenuButton = document.querySelector('.mobile-menu');
+  const nav = document.querySelector('nav');
+
+  mobileMenuButton.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    mobileMenuButton.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking a link
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      mobileMenuButton.classList.remove('active');
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !mobileMenuButton.contains(e.target) && nav.classList.contains('active')) {
+      nav.classList.remove('active');
+      mobileMenuButton.classList.remove('active');
+    }
+  });
 });
