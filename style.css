@@ -1,6 +1,5 @@
-/* Import the Courier Prime font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 :root {
     --accent-color: #3498db;
@@ -11,9 +10,9 @@
     --hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
     font-family: "Courier Prime", monospace;
@@ -22,287 +21,158 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     min-height: 100vh;
-    box-sizing: border-box;
-}
-
-/* Typography */
-h1, h2, h3 {
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 2.5em;
-}
-
-h2 {
-    font-size: 2em;
-    text-align: center;
-}
-
-h3 {
-    font-size: 1.5em;
 }
 
 header {
-    display: block;
-    justify-content: space-between; /* Space between the menu toggle and nav */
-    align-items: center; /* Center items vertically */
-    padding: 10px 20px; /* Add some padding */
-    background-color: #333; /* Dark background for contrast */
+    background-color: #333;
+    padding: 1rem;
     position: sticky;
-}
-
-.nav {
-    display: flex; /* Default to horizontal layout */
-}
-
-.nav a {
-    color: white; /* White text for visibility */
-    margin: 0 15px; /* Space between links */
-    text-decoration: none; /* Remove underline */
-}
-
-.menu-toggle {
-    display: none; /* Hide the menu toggle by default */
-    flex-direction: column; /* Stack the bars vertically */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-.bar {
-    height: 3px; /* Height of the bar */
-    width: 25px; /* Width of the bar */
-    background-color: white; /* Color of the bar */
-    margin: 3px 0; /* Space between bars */
-}
-
-/* Adjust the main content area */
-main {
-    width: 100%;
-    max-width: 800px;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-/* Link Styles */
-a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 10px 15px;
-    transition: all 0.3s ease;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Section Styles */
-section {
-    padding: 2em;
-    width: 100%;
-    max-width: 800px;
-}
-
-/* Profile Image */
-img.profile {
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    border: 4px solid var(--bg-color);
+    top: 0;
+    z-index: 1000;
     display: flex;
-    transition: transform 0.3s ease;
-}
-
-/* Progress Bars */
-progress {
-    width: 150px;
-    height: 25px;
-    border: none;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-}
-
-progress::-webkit-progress-bar {
-    background-color: var(--bg-color);
-}
-
-progress::-webkit-progress-value {
-    background-color: var(--text-color);
-}
-
-progress::-moz-progress-bar {
-    background-color: var(--text-color);
-}
-
-/* Details Sections */
-details {
-    border-style: dashed;
-    padding: 10px;
-    margin: 10px;
-    background-color: var(--card-bg);
-    width: 100%;
-    max-width: 800px;
-}
-
-details:hover {
-    border-style: solid;
-}
-
-/* About Section */
-#about {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    flex-direction: row; /* Change to row for smaller screens */
 }
 
-.about-content {
+nav {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-    flex-direction: row; /* Change to row for smaller screens */
+    gap: 1rem;
 }
 
-.about-content img.profile {
-    align-self: center;
-    margin-bottom: 0;
-    margin-right: 20px;
-    display: block;
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-/* Languages Section */
-#languages label {
-    display: inline-block;
-    width: 100px;
-    margin-right: 10px;
+nav a:hover {
+    background-color: var(--accent-color);
 }
 
-/* Fixed Skills Section */
-#skills {
-    width: 100%;
-    max-width: 800px;
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-#skills h2 {
-    text-align: center;
-    margin-bottom: 30px;
+.profile-section {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
-.skills-grid > div {
-    text-align: center;
+.skill-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Dark Mode */
-.dark-mode {
-    --bg-color: #333;
-    --text-color: #fff;
-    --card-bg: #2c2c2c;
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
 }
 
-.dark-mode header {
-    background-color: var(--card-bg);
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
-.dark-mode details {
-    background-color: var(--card-bg);
+.project-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
 }
 
-.dark-mode a {
-    color: var(--text-color);
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    margin: 0.5rem 0;
+    border-radius: 4px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--bg-color);
-    margin-top: 20px;
-    width: 100%;
-}
-
-.social-links a {
-    margin: 0 10px;
-}
-
-/* Add this to your CSS */
-.theme-toggle-btn {
+#darkModeToggle {
     background: none;
     border: none;
+    color: white;
     cursor: pointer;
-    padding: 10px;
-    font-size: 1.5rem;
-    color: inherit;
-    border-radius: 50%;
-    transition: background-color 0.3s;
+    padding: 0.5rem;
+    font-size: 1.2rem;
 }
 
-.theme-toggle-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #fff;
+    --card-bg: #2d2d2d;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.dark-mode .theme-toggle-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    margin-top: 3rem;
 }
 
-/* Responsive Design
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
-    body {
-        margin: 10px;
-    }
-
-    #about {
+    .profile-section {
         flex-direction: column;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .about-content img.profile {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    img.profile {
-        margin-bottom: 20px;
-    }
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #333;
-        width: 100%;
-        z-index: 10;
-    }
-
-    .nav.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    progress {
-        width: 100%;
+        text-align: center;
     }
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #333;
+        padding: 1rem;
+    }
+
+    #mobile-menu {
+        display: block;
     }
 }
-*/

@@ -1,65 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hugo's portfolio showcasing web development and software engineering projects.">
-    <title>Hugo's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hugo Monteiro - Web Developer</title>
+    <link href="style.css" rel="stylesheet">
+
     <script src="app.js"></script>
 </head>
-
-<body class="dark-mode">
+<body>
 <header>
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    <nav class="nav">
-        <a href="#about" aria-label="About Me">About Me</a>
-        <a href="#skills" aria-label="My Skills">Skills</a>
-        <a href="#languages" aria-label="Languages I Speak">Languages</a>
-        <a href="#projects" aria-label="My Projects">Projects</a>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#languages">Languages</a>
+        <a href="#projects">Projects</a>
     </nav>
-    <!-- <button id="darkModeToggle" class="theme-toggle-btn">
+    <button id="darkModeToggle">
         <i class="fas fa-moon"></i>
-    </button>*/ -->
+    </button>
 </header>
+
 <main>
-    <section id="about">
-        <div class="about-content">
-            <img class="profile"
-                 src="https://media.licdn.com/dms/image/v2/D4D03AQGDCAHAeRPTGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725498371751?e=1735776000&v=beta&t=STf6H28RwkibEB09eKeLxQDdNDfmsQBLkmkUdGrpajc"
-                 alt="Profile photo of Hugo">
-            <div>
-                <h2>About Me</h2>
-                <p>My name is Hugo. I'm 23 and I'm a web and software developer.</p>
-                <p>Passionate about technology with a strong foundation in web development, software engineering, and
-                    information systems.</p>
-                <p>Through international projects, I've led and collaborated with diverse teams, contributing to various
-                    tools and applications.</p>
-                <p>I am a fast learner, eager to bring my technical expertise to new roles.</p>
-                <p> Open to global opportunities.</p>
+    <section id="about" class="profile-section">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGDCAHAeRPTGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725498371751?e=1735776000&v=beta&t=STf6H28RwkibEB09eKeLxQDdNDfmsQBLkmkUdGrpajc" alt="Hugo Monteiro" class="profile-img">
+        <div>
+            <h1>Hugo Monteiro</h1>
+            <p>I'm 23 and I'm a web and software developer passionate about technology with a strong foundation in web development, software engineering, and information systems.</p>
+            <p>Through international projects, I've led and collaborated with diverse teams, contributing to various tools and applications.</p>
+            <div class="contact">
+                <p>📧 hugondarez@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hugomonteir0/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/HugoMonteiro12" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </div>
     </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: hugondarez@gmail.com</p>
-        <p><a href="https://www.linkedin.com/in/hugomonteir0/" target="_blank">LinkedIn</a></p>
-        <p><a href="https://github.com/HugoMonteiro12" target="_blank">Github</a></p>
-    </section>
 
-    <section id="resume">
-        <h2>Resume</h2>
-        <a href="assets/docs/Hugo Monteiro.pdf" download>Download my Resume (PDF)</a>
-    </section>
     <section id="skills">
         <h2>Skills</h2>
         <div class="skills-grid">
-            <div>
+            <div class="skill-card">
                 <h3>Languages</h3>
                 <ul>
                     <li>Python</li>
@@ -71,7 +53,7 @@
                     <li>JavaScript</li>
                 </ul>
             </div>
-            <div>
+            <div class="skill-card">
                 <h3>Frameworks</h3>
                 <ul>
                     <li>React</li>
@@ -79,7 +61,7 @@
                     <li>Laravel</li>
                 </ul>
             </div>
-            <div>
+            <div class="skill-card">
                 <h3>Tools</h3>
                 <ul>
                     <li>Unity</li>
@@ -87,7 +69,7 @@
                     <li>Git</li>
                 </ul>
             </div>
-            <div>
+            <div class="skill-card">
                 <h3>Databases</h3>
                 <ul>
                     <li>MySQL</li>
@@ -101,62 +83,53 @@
     <section id="languages">
         <h2>Languages</h2>
         <div class="language-item">
-            <label for="portuguese-skill">Portuguese</label>
-            <progress id="portuguese-skill" value="100" max="100"></progress>
-            Native
+            <span>Portuguese</span>
+            <span>Native</span>
         </div>
         <div class="language-item">
-            <label for="english-skill">English</label>
-            <progress id="english-skill" value="100" max="100"></progress>
-            C2
+            <span>English</span>
+            <span>C2</span>
         </div>
         <div class="language-item">
-            <label for="spanish-skill">Spanish</label>
-            <progress id="spanish-skill" value="35" max="100"></progress>
-            B1
+            <span>Spanish</span>
+            <span>B1</span>
         </div>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project-list">
-            <details>
-                <summary>ECoal23</summary>
-                <p>At ECoal23 in Lens, France, I developed "Soccer Savvy," a web app for football fans using React. I
-                    led UI/UX design in Figma, implemented secure authentication with Laravel, and integrated a
-                    real-time football API.</p>
-                <a href="https://github.com/Luqua5/eCoal" target="_blank">→ Link to project</a>
-            </details>
-            <details>
-                <summary>15 Minute Eco City</summary>
-                <p>An Erasmus project in Łódź, Poland, focused on sustainable urban living. I collaborated on "Ipsum
-                    Vitae," an app that helps newcomers find sustainable living options within a 15-minute radius.</p>
-                <a href="https://www.figma.com/proto/i1xjR3XKX65lwuLGwadz30/Ipsum-Vitae?node-id=248-6972&starting-point-node-id=451%3A2363&t=HztSnaTgxFkoTdUB-1"
-                   target="_blank">→ Link to project</a>
-            </details>
-            <details>
-                <summary>FII;)CA 2024</summary>
-                <p>During an Erasmus+ project in Finland, my team created a virtual library in Mozilla Hubs, providing a
-                    virtual learning and relaxation space. I improved my teamwork and gained new skills in VR
-                    development.</p>
-                <a href="https://socialvirtualreality.eu/#" target="_blank">→ Link to project</a>
-            </details>
-            <details>
-                <summary>Inclusive Internationalization</summary>
-                <p>For the Erasmus+ project in Crete, Greece, we designed a VR tool for autism therapy. Built in Unity,
-                    it offers therapists customizable virtual environments for stress exposure exercises.</p>
-                <a href="https://github.com/HugoMonteiro12/Raining_Environment" target="_blank">→ Link to project</a>
-            </details>
+        <div class="projects">
+            <div class="project-card">
+                <h3>ECoal23</h3>
+                <p>Developed "Soccer Savvy," a web app for football fans using React. Led UI/UX design in Figma, implemented secure authentication with Laravel, and integrated a real-time football API.</p>
+                <a href="https://github.com/Luqua5/eCoal" target="_blank">View Project →</a>
+            </div>
+            <div class="project-card">
+                <h3>15 Minute Eco City</h3>
+                <p>An Erasmus project in Łódź, Poland, focused on sustainable urban living. Collaborated on "Ipsum Vitae," an app that helps newcomers find sustainable living options.</p>
+                <a href="https://www.figma.com/proto/i1xjR3XKX65lwuLGwadz30/Ipsum-Vitae" target="_blank">View Project →</a>
+            </div>
+            <div class="project-card">
+                <h3>FII;)CA 2024</h3>
+                <p>Created a virtual library in Mozilla Hubs, providing a virtual learning and relaxation space. Improved teamwork and gained new skills in VR development.</p>
+                <a href="https://socialvirtualreality.eu/#" target="_blank">View Project →</a>
+            </div>
+            <div class="project-card">
+                <h3>Inclusive Internationalization</h3>
+                <p>Designed a VR tool for autism therapy built in Unity, offering therapists customizable virtual environments for stress exposure exercises.</p>
+                <a href="https://github.com/HugoMonteiro12/Raining_Environment" target="_blank">View Project →</a>
+            </div>
         </div>
     </section>
 </main>
+
 <footer>
-    <p>&copy; 2024 Hugo Monteiro. All rights reserved. | Created in Portugal.</p>
+    <p>© 2024 Hugo Monteiro. All rights reserved. | Created in Portugal.</p>
     <div class="social-links">
-        <a href="https://github.com/HugoMonteiro12" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/hugomonteir0/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/HugoMonteiro12" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hugomonteir0/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
 </footer>
-</body>
 
+</body>
 </html>
