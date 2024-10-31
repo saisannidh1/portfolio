@@ -11,125 +11,147 @@
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to Hugo's Portfolio</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#skills">Skills</a>
-            <a href="#languages">Languages</a>
-            <a href="#projects">Projects</a>
-        </nav>
-        <button id="darkModeToggle">Toggle Dark Mode</button>
-    </header>
+<header>
+    <h1>Welcome to Hugo's Portfolio</h1>
+    <nav>
 
-    <section id="about">
-        <div class="about-content">
-            <img class="profile"
-                src="https://media.licdn.com/dms/image/v2/D4D03AQGDCAHAeRPTGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725498371751?e=1735776000&v=beta&t=STf6H28RwkibEB09eKeLxQDdNDfmsQBLkmkUdGrpajc"
-                alt="Profile photo of Hugo">
-            <div>
-                <h2>About Me</h2>
-                <p>My name is Hugo. I'm 23 and I'm a web and software developer.</p>
-                <p>Passionate about technology with a strong foundation in web development, software engineering, and
-                    information systems.</p>
-                <p>Through international projects, I've led and collaborated with diverse teams, contributing to various
-                    tools and applications.</p>
-                <p>I am a fast learner, eager to bring my technical expertise to new roles and open to global
-                    opportunities.</p>
-            </div>
-        </div>
-    </section>
+        <a href="#about" aria-label="About Me">About Me</a>
+        <a href="#skills" aria-label="My Skills">Skills</a>
+        <a href="#languages" aria-label="Languages I Speak">Languages</a>
+        <a href="#projects" aria-label="My Projects">Projects</a>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div>
-                <h3>Languages</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>PHP</li>
-                    <li>Java</li>
-                    <li>Dart</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Frameworks</h3>
-                <ul>
-                    <li>React</li>
-                    <li>Flutter</li>
-                    <li>Laravel</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Tools</h3>
-                <ul>
-                    <li>Unity</li>
-                    <li>Figma</li>
-                    <li>Git</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Databases</h3>
-                <ul>
-                    <li>MySQL</li>
-                    <li>SQL</li>
-                    <li>Firebase</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    </nav>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+</header>
 
-    <section id="languages">
-        <h2>Languages</h2>
-        <div class="language-item">
-            <label for="portuguese-skill">Portuguese</label>
-            <progress id="portuguese-skill" value="100" max="100"></progress> Native
+<section id="about">
+    <div class="about-content">
+        <img class="profile"
+             src="https://media.licdn.com/dms/image/v2/D4D03AQGDCAHAeRPTGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725498371751?e=1735776000&v=beta&t=STf6H28RwkibEB09eKeLxQDdNDfmsQBLkmkUdGrpajc"
+             alt="Profile photo of Hugo">
+        <div>
+            <h2>About Me</h2>
+            <p>My name is Hugo. I'm 23 and I'm a web and software developer.</p>
+            <p>Passionate about technology with a strong foundation in web development, software engineering, and
+                information systems.</p>
+            <p>Through international projects, I've led and collaborated with diverse teams, contributing to various
+                tools and applications.</p>
+            <p>I am a fast learner, eager to bring my technical expertise to new roles.</p>
+            <p> Open to global opportunities.</p>
         </div>
-        <div class="language-item">
-            <label for="english-skill">English</label>
-            <progress id="english-skill" value="100" max="100"></progress> C2
-        </div>
-        <div class="language-item">
-            <label for="spanish-skill">Spanish</label>
-            <progress id="spanish-skill" value="35" max="100"></progress> B1
-        </div>
-    </section>
+    </div>
+</section>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: your.email@example.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your Name</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
+</section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-list">
-            <details>
-                <summary>ECoal23</summary>
-                <p>At ECoal23 in Lens, France, I developed "Soccer Savvy," a web app for football fans using React. I
-                    led UI/UX design in Figma, implemented secure authentication with Laravel, and integrated a
-                    real-time football API.</p>
-                <a href="https://github.com/Luqua5/eCoal" target="_blank">→ Link to project</a>
-            </details>
-            <details>
-                <summary>15 Minute Eco City</summary>
-                <p>An Erasmus project in Łódź, Poland, focused on sustainable urban living. I collaborated on "Ipsum
-                    Vitae," an app that helps newcomers find sustainable living options within a 15-minute radius.</p>
-                <a href="https://mimo.org" target="_blank">→ Link to project</a>
-            </details>
-            <details>
-                <summary>FII;)CA 2024</summary>
-                <p>During an Erasmus+ project in Finland, my team created a virtual library in Mozilla Hubs, providing a
-                    virtual learning and relaxation space. I improved my teamwork and gained new skills in VR
-                    development.</p>
-                <a href="https://socialvirtualreality.eu/#" target="_blank">→ Link to project</a>
-            </details>
-            <details>
-                <summary>Inclusive Internationalization</summary>
-                <p>For the Erasmus+ project in Crete, Greece, we designed a VR tool for autism therapy. Built in Unity,
-                    it offers therapists customizable virtual environments for stress exposure exercises.</p>
-                <a href="https://github.com/HugoMonteiro12/Raining_Environment" target="_blank">→ Link to project</a>
-            </details>
+<section id="resume">
+    <h2>Resume</h2>
+    <a href="assets/docs/Hugo Monteiro.pdf" download>Download my Resume (PDF)</a>
+</section>
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <div>
+            <h3>Languages</h3>
+            <ul>
+                <li>Python</li>
+                <li>PHP</li>
+                <li>Java</li>
+                <li>Dart</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
         </div>
-    </section>
+        <div>
+            <h3>Frameworks</h3>
+            <ul>
+                <li>React</li>
+                <li>Flutter</li>
+                <li>Laravel</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Tools</h3>
+            <ul>
+                <li>Unity</li>
+                <li>Figma</li>
+                <li>Git</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Databases</h3>
+            <ul>
+                <li>MySQL</li>
+                <li>SQL</li>
+                <li>Firebase</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
+<section id="languages">
+    <h2>Languages</h2>
+    <div class="language-item">
+        <label for="portuguese-skill">Portuguese</label>
+        <progress id="portuguese-skill" value="100" max="100"></progress>
+        Native
+    </div>
+    <div class="language-item">
+        <label for="english-skill">English</label>
+        <progress id="english-skill" value="100" max="100"></progress>
+        C2
+    </div>
+    <div class="language-item">
+        <label for="spanish-skill">Spanish</label>
+        <progress id="spanish-skill" value="35" max="100"></progress>
+        B1
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+        <details>
+            <summary>ECoal23</summary>
+            <p>At ECoal23 in Lens, France, I developed "Soccer Savvy," a web app for football fans using React. I
+                led UI/UX design in Figma, implemented secure authentication with Laravel, and integrated a
+                real-time football API.</p>
+            <a href="https://github.com/Luqua5/eCoal" target="_blank">→ Link to project</a>
+        </details>
+        <details>
+            <summary>15 Minute Eco City</summary>
+            <p>An Erasmus project in Łódź, Poland, focused on sustainable urban living. I collaborated on "Ipsum
+                Vitae," an app that helps newcomers find sustainable living options within a 15-minute radius.</p>
+            <a href="https://mimo.org" target="_blank">→ Link to project</a>
+        </details>
+        <details>
+            <summary>FII;)CA 2024</summary>
+            <p>During an Erasmus+ project in Finland, my team created a virtual library in Mozilla Hubs, providing a
+                virtual learning and relaxation space. I improved my teamwork and gained new skills in VR
+                development.</p>
+            <a href="https://socialvirtualreality.eu/#" target="_blank">→ Link to project</a>
+        </details>
+        <details>
+            <summary>Inclusive Internationalization</summary>
+            <p>For the Erasmus+ project in Crete, Greece, we designed a VR tool for autism therapy. Built in Unity,
+                it offers therapists customizable virtual environments for stress exposure exercises.</p>
+            <a href="https://github.com/HugoMonteiro12/Raining_Environment" target="_blank">→ Link to project</a>
+        </details>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Hugo Monteiro. All rights reserved.</p>
+    <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+</footer>
 </body>
 
 </html>
