@@ -108,3 +108,4 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.display = 'none'; // Hide the load-more button after clicking
     });
 });
+
