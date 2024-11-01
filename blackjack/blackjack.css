@@ -69,3 +69,76 @@ input[type="number"] {
     font-size: 1.2em;
     margin: 10px 0;
 }
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .game-container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 8px;
+        margin: 3px;
+        min-width: 25px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin: 8px 0;
+    }
+
+    .controls button {
+        padding: 8px 16px;
+        margin: 3px;
+        font-size: 14px;
+    }
+
+    .status {
+        font-size: 16px;
+    }
+
+    input[type="number"] {
+        width: 80px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 6px;
+        margin: 2px;
+        min-width: 20px;
+        font-size: 12px;
+    }
+
+    .controls button {
+        padding: 6px 12px;
+        width: calc(50% - 10px);
+        margin: 5px;
+    }
+
+    .bet-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .bet-controls button {
+        width: 100%;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        max-width: 200px;
+    }
+}
