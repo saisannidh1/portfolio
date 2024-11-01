@@ -65,9 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
-
-    // Optional: Add a scroll-to-top button
     const scrollBtn = document.createElement('button');
     scrollBtn.textContent = 'Top';
     scrollBtn.className = 'scroll-top-btn';
@@ -88,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const timelineItems = document.querySelectorAll('.timeline-item');
 
     const observer = new IntersectionObserver((entries) => {
@@ -98,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 entry.target.style.transform = 'translateX(0)';
             }
         });
-    }, { threshold: 0.5 });
+    }, {threshold: 0.5});
 
     timelineItems.forEach(item => {
         observer.observe(item);

@@ -17,7 +17,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* if you don't already have this */
+    scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
 }
 
@@ -191,6 +191,7 @@ main {
     border-radius: 8px;
     box-shadow: var(--shadow);
 }
+
 #languages {
     padding: 2rem 0;
 }
@@ -224,15 +225,16 @@ main {
 footer {
     background-color: var(--card-bg);
     display: flex;
-    justify-content: space-between; /* This spreads items to opposite ends */
-    align-items: center; /* This vertically centers the items */
-    padding: 20px; /* Add some padding if needed */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
-footer .social-links{
+footer .social-links {
     display: block;
     text-align: right;
 }
+
 .social-links {
     display: flex;
     justify-content: left;
@@ -243,11 +245,11 @@ footer .social-links{
 }
 
 .social-links .fa-linkedin {
-    color: #0077B5; /* LinkedIn blue */
+    color: #0077B5;
 }
 
 .social-links .fa-github {
-    color: #ffffff; /* GitHub dark gray */
+    color: #ffffff;
 }
 
 .filter-container {
@@ -289,14 +291,15 @@ footer .social-links{
 .scroll-top-btn:hover {
     background-color: #074e81;
 }
+
 .contact {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between icon and email */
+    gap: 10px;
 }
 
 .contact i {
-    color: #0077B5; /* Example color, adjust as needed */
+    color: #0077B5;
 }
 
 .contact a {
@@ -306,7 +309,7 @@ footer .social-links{
 }
 
 .contact a:hover {
-    color: #0077B5; /* Color change on hover, adjust as needed */
+    color: #0077B5;
     text-decoration: underline;
 }
 
@@ -357,7 +360,7 @@ footer .social-links{
 }
 
 #resume {
-    padding: 4rem 0;
+    padding: 0;
     position: relative;
 }
 
