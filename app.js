@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('load-more').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('load-more').addEventListener('click', function () {
         document.getElementById('more-certificates').classList.toggle('hidden');
         this.style.display = 'none'; // Hide the load-more button after clicking
     });
