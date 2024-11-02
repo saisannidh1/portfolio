@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>GaiaTur - Mobile App Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            /* Updated color palette for consistent dark theme */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #f6f6f6;
+            --text-secondary: #bababa;
+            --accent-color: #78C224;
+            --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: "Courier Prime", monospace;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            background-image: linear-gradient(315deg, #2d2d2d 0%, #000000 100%);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        .hero {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 2rem 2rem;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .screenshot {
+            aspect-ratio: 9/16;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        .screenshot img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform: translate(-50%, -50%);
+            box-shadow: var(--card-shadow);
+        }
+
+        .cta {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            margin-top: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background: #8ad72a;
+        }
+
+        footer {
+            background-color: var(--card-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshots {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="../index.html">← Back to Portfolio</a>
+        <div>
+            <a href="#features">Features</a>
+            <a href="#screenshots">Screenshots</a>
+            <a href="#download">Download</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <img alt="GaiaTur Logo" src="../assets/images/gaiatur/app_launcher_icon.png">
+    <p>Discover Vila Nova de Gaia like never before</p>
+</section>
+
+<div class="container">
+    <section id="features">
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3>Interactive City Guide</h3>
+                <p>Explore the best locations, landmarks, and hidden gems throughout Vila Nova de Gaia with our
+                    interactive map and detailed guides.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Events Calendar</h3>
+                <p>Stay updated with local events, festivals, and cultural activities happening in the city.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <h3>Custom Itineraries</h3>
+                <p>Create personalized travel itineraries based on your interests and time available.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots">
+        <h2>App Screenshots</h2>
+        <div class="screenshots">
+            <div class="screenshot">
+                <img alt="App Screenshot 1" src="../assets/images/gaiatur/Home.png">
+            </div>
+            <div class="screenshot">
+                <img alt="App Screenshot 2" src="../assets/images/gaiatur/Frame 6 (2).png">
+            </div>
+            <div class="screenshot">
+                <img alt="App Screenshot 3" src="../assets/images/gaiatur/Tickets.png">
+            </div>
+        </div>
+    </section>
+</div>
+
+<section class="cta" id="download">
+    <h2>Download GaiaTur Today</h2>
+    <p>Start exploring Vila Nova de Gaia with our comprehensive city guide app</p>
+    <a class="cta-button" href="https://github.com/HugoMonteiro12/GaiaTur">
+        <i></i> Check it out on Github</a>
+</section>
+
+<footer>
+    <p>© 2024 Hugo Monteiro. All rights reserved. | Created in Portugal.</p>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/hugomonteir0/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/HugoMonteiro12" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+</footer>
+</body>
+</html>
