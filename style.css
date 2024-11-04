@@ -3,14 +3,15 @@
 
 :root {
     --accent-color: #3498db;
-    --bg-color: rgba(249, 249, 249, 0.98);
-    --text-color: #333;
-    --card-bg: #fff;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --bg-color: rgb(45, 45, 45);
+    --text-color: #f6f6f6;
+    --card-bg: #2d2d2d;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     --header-height: 6rem;
+    --button-gradient: linear-gradient(135deg, #434343 0%, #2980b9 100%);
+    --button-hover-gradient: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
 }
-
 * {
     box-sizing: border-box;
 }
@@ -28,6 +29,8 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     min-height: 100vh;
+    background-image: linear-gradient(135deg, #434343 0%, #000000 100%);
+    background-attachment: fixed;
 }
 
 header {
@@ -265,14 +268,6 @@ main {
     font-size: 1.2rem;
 }
 
-.dark-mode {
-    --bg-color: rgb(45, 45, 45);
-    --text-color: #f6f6f6;
-    --card-bg: #2d2d2d;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    background-image: linear-gradient(135deg, #434343 0%, #000000 100%);
-    background-attachment: fixed;
-}
 
 footer {
     background-color: var(--card-bg);
@@ -315,7 +310,8 @@ footer .social-links {
     margin: 0.5rem;
     padding: 0.5rem 1rem;
     border: none;
-    background-color: #f1f1f1;
+    background-image: var(--button-gradient);
+    color: white;
     cursor: pointer;
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -323,8 +319,8 @@ footer .social-links {
 
 .filter-container button:hover,
 .filter-container button:focus {
-    background-color: #0984e3;
-    color: white;
+    background-image: var(--button-hover-gradient);
+    transform: translateY(-2px);
 }
 
 .scroll-top-btn {
@@ -332,7 +328,7 @@ footer .social-links {
     bottom: 20px;
     right: 20px;
     padding: 10px 15px;
-    background-color: #0984e3;
+    background-image: var(--button-gradient);
     color: white;
     border: none;
     border-radius: 5px;
@@ -342,7 +338,8 @@ footer .social-links {
 }
 
 .scroll-top-btn:hover {
-    background-color: #074e81;
+    background-image: var(--button-hover-gradient);
+    transform: translateY(-2px);
 }
 
 .contact {
@@ -509,16 +506,17 @@ footer .social-links {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #007bff;
+    background-image: var(--button-gradient);
     color: white;
     padding: 1rem 2rem;
-    border-radius: 30px;
+    border-radius: 10px;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .download-cv:hover {
-    background: #0056b3;
+    background-image: var(--button-hover-gradient);
     transform: translateY(-2px);
 }
 
@@ -646,15 +644,16 @@ footer .social-links {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #007bff;
+    background-image: var(--button-gradient);
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .load-more-btn:hover {
-    background-color: #0056b3;
+    background-image: var(--button-hover-gradient);
+    transform: translateY(-2px);
 }
 
 .tech-stack {
@@ -697,4 +696,53 @@ footer .social-links {
 
 .project-links a:hover {
     color: #0056b3;
+}
+
+.welcome {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.greeting {
+    font-size: 2rem;
+}
+
+.wave {
+    font-size: 1.5rem;
+    display: inline-block;
+    animation: wave 1s infinite;
+}
+
+.name {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0 0;
+    letter-spacing: 2px;
+}
+
+.title {
+    font-size: 2rem;
+    color: #cccccc;
+    margin: 1rem 0;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #999999;
+}
+
+.welcome-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
 }
