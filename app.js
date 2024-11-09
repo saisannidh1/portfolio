@@ -85,3 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function copyEmail() {
+    navigator.clipboard.writeText('hugondarez@gmail.com');
+    const button = document.querySelector('.copy-button');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(() => {
+        button.innerHTML = originalText;
+    }, 2000);
+}
