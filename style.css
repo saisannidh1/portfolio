@@ -516,21 +516,25 @@ footer {
 
 .social-links {
     display: flex;
+    align-items: center;
     gap: 15px;
-    font-size: 24px;
 }
 
 .social-links a {
     color: #333;
-    font-size: 24px;
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .social-links .fa-linkedin {
+    font-size: 40px;
     color: #0077B5;
 }
 
 .social-links .fa-github {
+    font-size: 40px;
     color: #ffffff;
 }
 
@@ -617,7 +621,7 @@ footer {
 @media (max-width: 768px) {
     header {
         width: fit-content;
-        padding: 1rem 1rem; /* Increase padding to make room for menu button */
+        padding: 1rem 1rem;
         position: absolute;
     }
     .header-wrapper {
@@ -626,13 +630,13 @@ footer {
     }
 
     .mobile-menu {
-        display: flex; /* Show mobile menu in mobile view */
+        display: flex;
     }
 
     nav {
         display: none;
         position: fixed;
-        top: 80px; /* Adjust based on your header height */
+        top: 80px;
         left: 1rem;
         background-color: #333;
         background-image: linear-gradient(315deg, #2d2d2d 0%, #000000 100%);
@@ -732,6 +736,53 @@ footer {
     footer {
         width: 100%;
     }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 15px;
+    }
+
+    .copy-button {
+        display: flex;
+        align-items: center;
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .social-links a {
+        color: #333;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .social-links .fa-linkedin {
+        font-size: 40px;
+        color: #0077B5;
+    }
+
+    .social-links .fa-github {
+        font-size: 40px;
+        color: #ffffff;
+    }
+
+    .resume-buttons {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 15px;
+    }
+    .download-cv {
+        display: flex;
+        align-items: center;
+    }
 }
 
 /* ==========================================================================
@@ -780,8 +831,9 @@ footer {
 /* Contact Section */
 .contact-container {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
 }
 
 .contact {
