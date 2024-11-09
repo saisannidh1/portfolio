@@ -673,7 +673,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 0.1rem;
-        width: 80%;
+
     }
 
     /* Layout */
