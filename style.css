@@ -403,20 +403,12 @@ main {
     border-radius: 50%;
     position: absolute;
     top: 2.5rem;
-    transform: translateX(-50%); /* Offset by half the dot's width */
+    right: -10px;
     border: 4px solid var(--bg-color);
 }
 
-.timeline-dot-left {
-    width: 20px;
-    height: 20px;
-    background: var(--accent-color);
-    border-radius: 50%;
-    position: absolute;
-    top: 2.5rem;
-    left: 100%;
-    transform: translateX(-50%); /* Offset by half the dot's width */
-    border: 4px solid var(--bg-color);
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
 }
 
 .timeline-content {
