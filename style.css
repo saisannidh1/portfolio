@@ -673,8 +673,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 0.1rem;
-        padding-right: 10px;
-        padding-left: 10px;
+        width: 80%;
     }
 
     /* Layout */
