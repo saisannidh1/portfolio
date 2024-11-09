@@ -47,13 +47,22 @@ body {
 header {
     background-color: #333;
     background-image: linear-gradient(315deg, #2d2d2d 0%, #000000 100%);
-    padding: 1rem;
+    position: sticky;
+    top: 1rem;
+    z-index: 1000;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 3rem;
+}
+
+
+.header-wrapper {
     position: sticky;
     top: 0;
+    padding: 1rem;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 nav {
@@ -81,12 +90,12 @@ nav a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+
 }
 
 .mobile-menu span {
     display: block;
-    width: 25px;
+    width: 30px;
     height: 3px;
     background-color: white;
     transition: all 0.3s ease;
@@ -98,7 +107,8 @@ nav a:hover {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     border-radius: 8px;
     backdrop-filter: blur(5px);
 }
@@ -157,6 +167,12 @@ main {
     color: #999999;
     margin: 0;
     line-height: 1.2;
+}
+
+.wave {
+    display: inline-block;
+    animation: wave 2s infinite;
+    transform-origin: 70% 70%;
 }
 
 /* ==========================================================================
@@ -459,6 +475,19 @@ main {
     overflow: hidden;
 }
 
+.certificate h4 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-right: 35px;
+}
+
+.certificate p {
+    color: var(--text-color);
+    margin: 0;
+}
+
 .certificate::after {
     content: '';
     position: absolute;
@@ -586,23 +615,35 @@ footer {
    Media Queries
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Navigation */
-    .mobile-menu {
+    header {
+        width: fit-content;
+        padding: 1rem 1rem; /* Increase padding to make room for menu button */
+        position: absolute;
+    }
+    .header-wrapper {
         display: flex;
-        z-index: 1001;
+        justify-content: flex-start;
+    }
+
+    .mobile-menu {
+        display: flex; /* Show mobile menu in mobile view */
     }
 
     nav {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        position: fixed;
+        top: 80px; /* Adjust based on your header height */
+        left: 1rem;
         background-color: #333;
+        background-image: linear-gradient(315deg, #2d2d2d 0%, #000000 100%);
         padding: 1rem;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 1rem;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: fit-content;
+        min-width: 200px;
     }
 
     nav.active {
@@ -619,6 +660,12 @@ footer {
 
     .mobile-menu.active span:last-child {
         transform: translateY(-7px) rotate(-45deg);
+    }
+
+    nav a {
+        width: 100%;
+        text-align: left;
+        padding: 0.75rem 1rem;
     }
 
     /* Layout */
@@ -678,15 +725,6 @@ footer {
 /* ==========================================================================
    Interactive Elements
    ========================================================================== */
-/* Dark Mode Toggle */
-#darkModeToggle {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-}
 
 /* Scroll to Top Button */
 .scroll-top-btn {
@@ -723,31 +761,6 @@ footer {
 }
 
 .load-more-btn:hover {
-    background-image: var(--button-hover-gradient);
-    transform: translateY(-2px);
-}
-
-/* Filter Container */
-.filter-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.filter-container button {
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    background-image: var(--button-gradient);
-    color: white;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-.filter-container button:hover,
-.filter-container button:focus {
     background-image: var(--button-hover-gradient);
     transform: translateY(-2px);
 }

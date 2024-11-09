@@ -1,6 +1,5 @@
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
-    // Dark mode initialization (previous code)
 
     // Mobile menu functionality
     const mobileMenuButton = document.querySelector('.mobile-menu');
@@ -89,7 +88,7 @@ function copyEmail() {
     navigator.clipboard.writeText('hugondarez@gmail.com');
     const button = document.querySelector('.copy-button');
     const originalText = button.innerHTML;
-    button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    button.innerHTML = '<i class="fas fa-check"></i> Email Copied!';
     setTimeout(() => {
         button.innerHTML = originalText;
     }, 2000);
