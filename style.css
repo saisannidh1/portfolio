@@ -436,6 +436,10 @@ main {
     position: relative;
     transition: transform 0.3s ease;
 }
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
 
 /* Resume Buttons */
 .resume-buttons {
@@ -879,5 +883,4 @@ footer {
 .copy-button:hover {
     background-image: var(--button-hover-gradient);
     transform: translateY(-2px);
-    cursor: pointer;
 }
