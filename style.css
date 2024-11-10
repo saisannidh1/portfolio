@@ -694,14 +694,25 @@ footer {
         padding: 0.75rem 1rem;
     }
 
+    /* Welcome section adjustments */
     .welcome-content {
-        width: 80%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        gap: 0.1rem;
-
+        width: 90%;  /* Slightly wider for better text wrapping */
+        gap: 0.5rem;  /* Increased gap for better readability */
     }
+
+    .welcome-content .greeting {
+        font-size: 1.5rem;
+    }
+
+    .welcome-content h1 {
+        font-size: 1.75rem;  /* Smaller heading */
+    }
+
+    .welcome-content p {
+        font-size: 0.9rem;  /* Smaller paragraph text */
+        line-height: 1.4;  /* Adjusted line height */
+    }
+
 
     /* Layout */
     .profile-section {
