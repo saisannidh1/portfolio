@@ -638,7 +638,7 @@ footer {
    ========================================================================== */
 @media (max-width: 768px) {
     header {
-        width: fit-content;
+        width: 80%;
         padding: 1rem 1rem;
         position: absolute;
     }
