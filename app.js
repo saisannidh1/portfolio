@@ -93,3 +93,40 @@ function copyEmail() {
         button.innerHTML = originalText;
     }, 2000);
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Get header height for offset calculations
+    const header = document.querySelector('header');
+
+    function updateActiveSection() {
+        const scrollPosition = window.scrollY + header.offsetHeight + 50; // Add some buffer
+
+        sections.forEach(section => {
+            if (!section.getAttribute('id')) return; // Skip sections without IDs
+
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            // Check if the section is currently in view
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                // Add active class to corresponding link
+                const correspondingLink = document.querySelector(`nav a[href="#${section.getAttribute('id')}"]`);
+                if (correspondingLink) {
+                    correspondingLink.classList.add('active');
+                }
+            }
+        });
+    }
+
+    // Update active section on scroll
+    window.addEventListener('scroll', updateActiveSection);
+
+    // Initial check for active section
+    updateActiveSection();
+});
