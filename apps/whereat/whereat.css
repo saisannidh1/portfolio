@@ -1,15 +1,17 @@
-/* Variables */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
 :root {
-    --accent-color: rgb(120, 194, 36);
-    --bg-color: rgba(45, 45, 45, 0.8);
-    --text-color: #f6f6f6;
-    --card-bg: #2d2d2d;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    --header-height: 6rem;
-    --button-gradient: linear-gradient(135deg, #434343 0%, rgb(120, 194, 36) 100%);
-    --button-hover-gradient: linear-gradient(135deg, rgb(120, 194, 36) 0%, #434343 100%);
-    --max-width: 1200px;
+    --whereat-accent-color: rgb(236, 117, 5);
+    --whereat-bg-color: rgba(45, 45, 45, 0.8);
+    --whereat-text-color: #f6f6f6;
+    --whereat-card-bg: #2d2d2d;
+    --whereat-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --whereat-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --whereat-header-height: 6rem;
+    --whereat-button-gradient: linear-gradient(135deg, #434343 0%, rgb(236, 117, 5) 100%);
+    --whereat-button-hover-gradient: linear-gradient(135deg, rgb(236, 117, 5) 0%, #434343 100%);
+    --whereat-max-width: 1200px;
 }
 
 /* Base Styles */
@@ -17,14 +19,14 @@ body {
     font-family: "Courier Prime", monospace;
     margin: 0;
     padding: 0;
-    color: var(--text-color);
+    color: var(--whereat-text-color);
     line-height: 1.6;
     min-height: 100vh;
-    background-color: var(--bg-color);
+    background-color: var(--whereat-bg-color);
 }
 
 .container {
-    max-width: var(--max-width);
+    max-width: var(--whereat-max-width);
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -49,7 +51,7 @@ nav {
 }
 
 nav a {
-    color: var(--text-color);
+    color: var(--whereat-text-color);
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -59,7 +61,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--accent-color);
+    background-color: var(--whereat-accent-color);
     transform: translateY(-2px);
 }
 
@@ -72,7 +74,7 @@ nav a:hover {
 }
 
 .hero-inner {
-    max-width: var(--max-width);
+    max-width: var(--whereat-max-width);
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -88,8 +90,8 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(-60deg, rgba(120, 194, 36, 0.76) 50%, rgba(45, 45, 45, 0.8) 50%);
-    opacity: 0.1;
+    background: linear-gradient(-130deg, rgb(236, 117, 5) 50%, rgba(45, 45, 45, 0.8) 50%);
+    opacity: 0.5;
     z-index: -1;
     animation: slide 5s ease-in-out infinite alternate;
 }
@@ -122,7 +124,6 @@ nav a:hover {
 .hero-image img {
     max-width: 70%;
     height: auto;
-    border-radius: 12px;
     transition: transform 0.3s ease;
 }
 
@@ -132,7 +133,7 @@ nav a:hover {
 
 /* Features Section */
 .features {
-    max-width: var(--max-width);
+    max-width: var(--whereat-max-width);
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -141,10 +142,10 @@ nav a:hover {
 }
 
 .feature-card {
-    background-color: var(--card-bg);
+    background-color: var(--whereat-card-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--whereat-shadow);
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -157,24 +158,24 @@ nav a:hover {
     top: 0;
     bottom: 0;
     width: 4px;
-    background-color: var(--accent-color);
+    background-color: var(--whereat-accent-color);
     border-radius: 4px 0 0 4px;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--hover-shadow);
+    box-shadow: var(--whereat-hover-shadow);
 }
 
 .feature-icon {
     font-size: 2.5rem;
-    color: var(--accent-color);
+    color: var(--whereat-accent-color);
     margin-bottom: 1rem;
 }
 
 /* Screenshots Section */
 .screenshots {
-    max-width: var(--max-width);
+    max-width: var(--whereat-max-width);
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -183,36 +184,36 @@ nav a:hover {
 }
 
 .screenshot {
-    background-color: var(--card-bg);
+    background-color: var(--whereat-card-bg);
     border-radius: 24px;
     padding: 1rem;
-    box-shadow: var(--shadow);
+    box-shadow: var(--whereat-shadow);
     transition: transform 0.3s ease;
 }
 
 .screenshot:hover {
     transform: translateY(-5px);
-    box-shadow: var(--hover-shadow);
+    box-shadow: var(--whereat-hover-shadow);
 }
 
 .screenshot img {
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    object-fit: contain;
+    border-radius: 6px;
+    object-fit: fill;
 }
 
 /* CTA Section */
 .cta {
     text-align: center;
     padding: 4rem 0;
-    background-color: var(--card-bg);
+    background-color: var(--whereat-card-bg);
     position: relative;
     overflow: hidden;
 }
 
 .cta-inner {
-    max-width: var(--max-width);
+    max-width: var(--whereat-max-width);
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -231,7 +232,7 @@ nav a:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-image: var(--button-gradient);
+    background-image: var(--whereat-button-gradient);
     color: var(--text-color);
     text-decoration: none;
     padding: 1rem 2rem;
@@ -242,19 +243,19 @@ nav a:hover {
 }
 
 .cta-button:hover {
-    background-image: var(--button-hover-gradient);
+    background-image: var(--whereat-button-hover-gradient);
     transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
-    background-color: var(--card-bg);
+    background-color: var(--whereat-card-bg);
     padding: 2rem 0;
     margin-top: 4rem;
 }
 
 .footer-content {
-    max-width: var(--max-width);
+    max-width: var(--whereat-max-width);
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -269,12 +270,12 @@ footer {
 }
 
 .social-links a {
-    color: var(--text-color);
+    color: var(--whereat-text-color);
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
+    color: var(--whereat-accent-color);
     transform: translateY(-2px);
 }
 
@@ -285,7 +286,7 @@ footer {
 
 .social-links .fa-github {
     font-size: 2.5rem;
-    color: var(--text-color);
+    color: var(--whereat-text-color);
 }
 
 /* Animation */
