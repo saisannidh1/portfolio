@@ -130,3 +130,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial check for active section
     updateActiveSection();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollIndicator = document.getElementById('scrollIndicator');
+
+    // Check if element exists before adding event listener
+    if (scrollIndicator) {
+        // Hide scroll indicator when user starts scrolling
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollIndicator.classList.add('hidden');
+            } else {
+                scrollIndicator.classList.remove('hidden');
+            }
+        });
+    } else {
+        console.error('Scroll indicator element not found');
+    }
+})
