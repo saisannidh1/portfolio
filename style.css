@@ -706,8 +706,8 @@ footer {
     nav {
         display: none;
         position: fixed;
-        top: 100px;
-        left: 1rem;
+        top: 50px;
+        left: 20px;
         background-color: #333;
         background-image: linear-gradient(315deg, #2d2d2d 0%, #000000 100%);
         padding: 1rem;
