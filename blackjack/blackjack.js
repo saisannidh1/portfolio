@@ -21,7 +21,6 @@ class Deck {
     }
 
     reset() {
-        // Using HTML entities for suits instead of Unicode characters
         const suits = ['&spades;', '&hearts;', '&diams;', '&clubs;'];
         const cardValues = [
             {rank: "2", value: 2},
@@ -63,7 +62,6 @@ class Deck {
     }
 }
 
-// Rest of the JavaScript code remains the same...
 class Hand {
     constructor() {
         this.cards = [];
@@ -92,6 +90,14 @@ class Hand {
         return value;
     }
 
+    hasBlackjack() {
+        return this.cards.length === 2 && this.getValue() === 21;
+    }
+
+    isBusted() {
+        return this.getValue() > 21;
+    }
+
     clear() {
         this.cards = [];
     }
@@ -104,7 +110,7 @@ class BlackjackGame {
         this.dealerHand = new Hand();
         this.playerBalance = 1000;
         this.currentBet = 0;
-        this.gameStatus = 'betting'; // betting, playing, finished
+        this.gameState = 'betting'; // betting, playing, finished
 
         // DOM elements
         this.playerHandEl = document.getElementById('player-hand');
@@ -130,13 +136,13 @@ class BlackjackGame {
 
     placeBet() {
         const bet = parseInt(this.betInput.value);
-        if (bet > this.playerBalance || bet < 10) {
+        if (bet > this.playerBalance || bet < 10 || isNaN(bet)) {
             this.showMessage('Invalid bet amount!');
             return;
         }
 
         this.currentBet = bet;
-        this.gameStatus = 'playing';
+        this.gameState = 'playing';
         this.startRound();
     }
 
@@ -149,19 +155,19 @@ class BlackjackGame {
         this.playerHand.addCard(this.deck.draw());
         this.dealerHand.addCard(this.deck.draw());
 
-        this.updateDisplay(true);
+        this.updateDisplay();
         this.updateControls();
 
-        if (this.playerHand.getValue() === 21) {
-            this.stand();
+        if (this.playerHand.hasBlackjack()) {
+            this.handleBlackjack();
         }
     }
 
     hit() {
         this.playerHand.addCard(this.deck.draw());
-        this.updateDisplay(true);
+        this.updateDisplay();
 
-        if (this.playerHand.getValue() > 21) {
+        if (this.playerHand.isBusted()) {
             this.endRound();
         }
     }
@@ -174,16 +180,16 @@ class BlackjackGame {
     }
 
     endRound() {
-        this.gameStatus = 'finished';
-        this.updateDisplay(false);
+        this.gameState = 'finished';
+        this.updateDisplay();
 
         const playerValue = this.playerHand.getValue();
         const dealerValue = this.dealerHand.getValue();
 
-        if (playerValue > 21) {
+        if (this.playerHand.isBusted()) {
             this.playerBalance -= this.currentBet;
             this.showMessage('Bust! You lose!');
-        } else if (dealerValue > 21) {
+        } else if (this.dealerHand.isBusted()) {
             this.playerBalance += this.currentBet;
             this.showMessage('Dealer busts! You win!');
         } else if (playerValue > dealerValue) {
@@ -200,27 +206,35 @@ class BlackjackGame {
         this.updateBalance();
     }
 
+    handleBlackjack() {
+        if (this.dealerHand.hasBlackjack()) {
+            this.showMessage("It's a push!");
+        } else {
+            this.playerBalance += this.currentBet * 1.5;
+            this.showMessage('Blackjack! You win!');
+        }
+        this.endRound();
+    }
+
     resetGame() {
         if (this.playerBalance < 10) {
             this.playerBalance = 1000;
         }
-        this.gameStatus = 'betting';
+        this.gameState = 'betting';
         this.currentBet = 0;
         this.playerHand.clear();
         this.dealerHand.clear();
-        this.updateDisplay(true);
+        this.updateDisplay();
         this.updateControls();
         this.updateBalance();
         this.showMessage('Place your bet!');
     }
 
-    updateDisplay(hideDealer) {
-        // Update player's hand
+    updateDisplay() {
         this.playerHandEl.innerHTML = this.playerHand.cards.map(card => card.toHTML()).join('');
         this.playerScoreEl.textContent = `Value: ${this.playerHand.getValue()}`;
 
-        // Update dealer's hand
-        if (hideDealer && this.dealerHand.cards.length > 0) {
+        if (this.gameState === 'playing') {
             this.dealerHandEl.innerHTML = this.dealerHand.cards[0].toHTML() + '<div class="card">?</div>';
             this.dealerScoreEl.textContent = '';
         } else {
@@ -230,10 +244,10 @@ class BlackjackGame {
     }
 
     updateControls() {
-        this.hitButton.disabled = this.gameStatus !== 'playing';
-        this.standButton.disabled = this.gameStatus !== 'playing';
-        this.betButton.disabled = this.gameStatus !== 'betting';
-        this.betInput.disabled = this.gameStatus !== 'betting';
+        this.hitButton.disabled = this.gameState !== 'playing';
+        this.standButton.disabled = this.gameState !== 'playing';
+        this.betButton.disabled = this.gameState !== 'betting';
+        this.betInput.disabled = this.gameState !== 'betting';
     }
 
     updateBalance() {
@@ -246,5 +260,4 @@ class BlackjackGame {
     }
 }
 
-// Start the game
 const game = new BlackjackGame();
