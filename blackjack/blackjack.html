@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
     <link rel="stylesheet" href="blackjack.css">
 </head>
@@ -22,15 +24,21 @@
         <div id="player-score"></div>
     </div>
 
+    <!-- New container for split hands -->
+    <div id="split-hands"></div>
+
     <div class="bet-controls">
-        <label for="bet-amount"></label><input id="bet-amount" min="10" step="10" type="number" value="10">
+        <label for="bet-amount">Bet Amount:</label>
+        <input id="bet-amount" type="number" min="10" step="10" value="10">
         <button id="place-bet">Place Bet</button>
     </div>
 
     <div class="controls">
-        <button disabled id="hit">Hit</button>
-        <button disabled id="stand">Stand</button>
-        <button id="new-game">New Game</button>
+        <button id="hit">Hit</button>
+        <button id="stand">Stand</button>
+        <button id="double-down" style="display: none;">Double Down</button>
+        <button id="split" style="display: none;">Split</button>
+        <button id="insurance" style="display: none;">Insurance</button>
     </div>
 </div>
 
