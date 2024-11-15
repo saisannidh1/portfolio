@@ -264,11 +264,9 @@
     <section class="fade-in" id="projects">
         <h2>Projects</h2>
         <div class="projects">
-            <div class="project-card">
+            <div class="project-card" data-project="ecoal23">
                 <h3>ECoal23</h3>
-                <p>Developed <i><em>Soccer Savvy</em></i>, a web app for football fans using React. Led UI/UX design in
-                    Figma,
-                    implemented secure authentication with Laravel, and integrated a real-time football API.</p>
+                <p>Developed <i><em>Soccer Savvy</em></i>, a web app for football fans using React. Led UI/UX design in Figma, implemented secure authentication with Laravel, and integrated a real-time football API.</p>
                 <div class="tech-stack">
                     <span class="tech-icon"><i class="fab fa-react tech-icon"></i></span>
                     <span class="tech-icon"><i class="fab fa-laravel tech-icon"></i></span>
@@ -276,58 +274,62 @@
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/Luqua5/eCoal" target="_blank">View Project →</a>
+                    <button class="read-more-btn">Read More</button>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-project="eco-city">
                 <h3>15 Minute Eco City</h3>
-                <p>An Erasmus project in Łódź, Poland, focused on sustainable urban living. Collaborated on <em><i>Ipsum
-                    Vitae</i></em>, an app that helps newcomers find sustainable living options.</p>
+                <p>An Erasmus project in Łódź, Poland, focused on sustainable urban living. Collaborated on <em><i>Ipsum Vitae</i></em>, an app that helps newcomers find sustainable living options.</p>
                 <div class="tech-stack">
                     <span class="tech-icon"><i class="fab fa-figma tech-icon"></i></span>
                 </div>
                 <div class="project-links">
-                    <a href="https://www.figma.com/proto/i1xjR3XKX65lwuLGwadz30/Ipsum-Vitae" target="_blank">View
-                        Project
-                        →</a></div>
+                    <a href="https://www.figma.com/proto/i1xjR3XKX65lwuLGwadz30/Ipsum-Vitae" target="_blank">View Project →</a>
+                    <button class="read-more-btn">Read More</button>
+                </div>
             </div>
-            <div class="project-card">
+
+            <div class="project-card" data-project="fiica">
                 <h3>FII;)CA 2024</h3>
-                <p>Created a virtual library in Mozilla Hubs, providing a virtual learning and relaxation space.
-                    Improved teamwork and gained new skills in VR development.</p>
+                <p>Created a virtual library in Mozilla Hubs, providing a virtual learning and relaxation space. Improved teamwork and gained new skills in VR development.</p>
                 <div class="tech-stack">
                     <span class="tech-icon"><i class="fas fa-vr-cardboard tech-icon"></i></span>
                 </div>
                 <div class="project-links">
                     <a href="https://socialvirtualreality.eu/#" target="_blank">View Website →</a>
+                    <button class="read-more-btn">Read More</button>
                 </div>
             </div>
-            <div class="project-card">
+
+            <div class="project-card" data-project="inclusive-internationalization">
                 <h3>Inclusive Internationalization</h3>
-                <p>Designed a VR tool for autism therapy built in Unity, offering therapists customizable virtual
-                    environments for stress exposure exercises.</p>
+                <p>Designed a VR tool for autism therapy built in Unity, offering therapists customizable virtual environments for stress exposure exercises.</p>
                 <div class="tech-stack">
                     <span class="tech-icon"><i class="fas fa-gamepad tech-icon"></i></span>
                     <span class="tech-icon"><i class="fas fa-vr-cardboard tech-icon"></i></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/HugoMonteiro12/Raining_Environment" target="_blank">View Project →</a>
-                    <br>
                     <a href="BIP/home.html" target="_blank">View Website →</a>
+                    <button class="read-more-btn">Read More</button>
                 </div>
             </div>
-            <div class="project-card">
+
+            <div class="project-card" data-project="pokedex">
                 <h3>Pokedex</h3>
-                <p>A small React app designed to browse different Pokémons, uses the PokeAPI to fetch information. </p>
+                <p>A small React app designed to browse different Pokémons, uses the PokeAPI to fetch information.</p>
                 <div class="tech-stack">
                     <span class="tech-icon"><i class="fab fa-react tech-icon"></i></span>
                     <span class="tech-icon"><i class="fab fa-css3-alt tech-icon"></i></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/HugoMonteiro12/Pokedex" target="_blank">View Website →</a>
+                    <button class="read-more-btn">Read More</button>
                 </div>
             </div>
-            <div class="project-card">
+
+            <div class="project-card" data-project="blackjack">
                 <h3>BlackJack</h3>
                 <p>A blackjack game made only of HTML, CSS and JS.</p>
                 <div class="tech-stack">
@@ -337,10 +339,182 @@
                 </div>
                 <div class="project-links">
                     <a href="blackjack/blackjack.html" target="_blank">View Website →</a>
+                    <button class="read-more-btn">Read More</button>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Modals -->
+        <div id="modal-ecoal23" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>ECoal23 - Soccer Savvy</h2>
+                <p>Soccer Savvy is a comprehensive web application designed for football enthusiasts. It offers real-time updates, match statistics, and personalized content for users.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Real-time match updates and live scores</li>
+                    <li>Personalized news feed based on favorite teams and players</li>
+                    <li>Interactive league tables and fixtures</li>
+                    <li>User authentication and profile customization</li>
+                </ul>
+                <h3>Technical Details:</h3>
+                <ul>
+                    <li>Frontend: React with Redux for state management</li>
+                    <li>Backend: Laravel API with MySQL database</li>
+                    <li>Authentication: JWT tokens for secure user sessions</li>
+                    <li>External API: Integration with a professional football data provider</li>
+                    <li>UI/UX: Designed in Figma, implementing responsive and intuitive user interfaces</li>
+                </ul>
+                <h3>Challenges Overcome:</h3>
+                <p>One of the main challenges was ensuring real-time data synchronization across multiple devices. We implemented WebSocket connections to push live updates to all connected clients, significantly improving the user experience during live matches.</p>
+                <h3>Future Improvements:</h3>
+                <ul>
+                    <li>Implement a chat feature for live match discussions</li>
+                    <li>Add support for fantasy league integration</li>
+                    <li>Develop a mobile app version for iOS and Android</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="modal-eco-city" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>15 Minute Eco City - Ipsum Vitae</h2>
+                <p>Ipsum Vitae is an innovative app developed as part of an Erasmus project in Łódź, Poland. It aims to promote sustainable urban living by helping newcomers find eco-friendly living options.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Interactive map of sustainable housing options</li>
+                    <li>Filters for eco-friendly amenities and transportation</li>
+                    <li>Community-driven ratings and reviews</li>
+                    <li>Educational resources on sustainable living</li>
+                </ul>
+                <h3>Technical Details:</h3>
+                <ul>
+                    <li>UI/UX: Designed in Figma, focusing on intuitive navigation and clear information presentation</li>
+                    <li>Prototype: Interactive prototype created in Figma for user testing and feedback</li>
+                    <li>Data Collection: Collaborated with local authorities and environmental organizations</li>
+                </ul>
+                <h3>Challenges Overcome:</h3>
+                <p>The main challenge was creating a user-friendly interface that could effectively communicate complex sustainability metrics. We conducted extensive user testing and iterative design to ensure the app was accessible to users from diverse backgrounds.</p>
+                <h3>Impact:</h3>
+                <p>The project raised awareness about sustainable urban living and provided valuable insights for city planners in Łódź. It also served as a model for similar initiatives in other European cities.</p>
+            </div>
+        </div>
+
+        <div id="modal-fiica" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>FII;)CA 2024 - Virtual Library</h2>
+                <p>FII;)CA 2024 is an innovative virtual library project created using Mozilla Hubs. It provides a unique virtual learning and relaxation space for users.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Immersive 3D virtual library environment</li>
+                    <li>Interactive bookshelves and reading areas</li>
+                    <li>Collaborative spaces for group study and discussions</li>
+                    <li>Integration of multimedia learning resources</li>
+                </ul>
+                <h3>Technical Details:</h3>
+                <ul>
+                    <li>Platform: Mozilla Hubs for VR development</li>
+                    <li>3D Modeling: Created custom 3D models for books, furniture, and environment</li>
+                    <li>Interactivity: Implemented using JavaScript and WebXR APIs</li>
+                </ul>
+                <h3>Challenges Overcome:</h3>
+                <p>One of the main challenges was optimizing the virtual environment for performance across different devices. We implemented level-of-detail (LOD) techniques and efficient asset loading to ensure a smooth experience for all users.</p>
+                <h3>Skills Gained:</h3>
+                <ul>
+                    <li>VR development and 3D modeling</li>
+                    <li>User experience design for virtual spaces</li>
+                    <li>Collaborative development in a virtual environment</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="modal-inclusive-internationalization" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Inclusive Internationalization - VR Autism Therapy Tool</h2>
+                <p>This project involves the development of a VR tool designed to assist in autism therapy. It provides therapists with customizable virtual environments for conducting stress exposure exercises.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Customizable virtual environments for various scenarios</li>
+                    <li>Adjustable stress levels and stimuli</li>
+                    <li>Real-time monitoring and data collection for therapists</li>
+                    <li>Gradual exposure techniques for anxiety management</li>
+                </ul>
+                <h3>Technical Details:</h3>
+                <ul>
+                    <li>Development Platform: Unity</li>
+                    <li>VR Integration: Compatible with major VR headsets</li>
+                    <li>Scripting: C# for game logic and interactions</li>
+                    <li>Data Management: Secure storage and analysis of session data</li>
+                </ul>
+                <h3>Challenges Overcome:</h3>
+                <p>A significant challenge was creating environments that were both engaging and not overstimulating for users with autism. We worked closely with autism specialists to fine-tune the sensory aspects of each virtual scenario.</p>
+                <h3>Impact:</h3>
+                <p>This tool has the potential to revolutionize autism therapy by providing a safe, controlled environment for exposure therapy. It allows for personalized treatment plans and can be easily adapted to individual needs.</p>
+            </div>
+        </div>
+
+        <div id="modal-pokedex" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Pokedex - React Pokemon Browser</h2>
+                <p>The Pokédex project is a React-based web application that allows users to browse and explore information about different Pokemon using the PokeAPI.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Browse a comprehensive list of Pokemon</li>
+                    <li>View detailed information about each Pokemon</li>
+                    <li>Search functionality for finding specific Pokemon</li>
+                    <li>Responsive design for mobile and desktop use</li>
+                </ul>
+                <h3>Technical Details:</h3>
+                <ul>
+                    <li>Frontend: React.js</li>
+                    <li>State Management: React Hooks (useState, useEffect)</li>
+                    <li>API Integration: Fetch API for PokeAPI requests</li>
+                    <li>Styling: CSS3 with Flexbox/Grid for responsive layout</li>
+                </ul>
+                <h3>Challenges Overcome:</h3>
+                <p>One challenge was efficiently managing API requests to prevent overloading the PokeAPI. We implemented pagination and caching strategies to optimize data fetching and improve the user experience.</p>
+                <h3>Learning Outcomes:</h3>
+                <ul>
+                    <li>Deepened understanding of React and its ecosystem</li>
+                    <li>Improved skills in working with external APIs</li>
+                    <li>Enhanced knowledge of state management in React applications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="modal-blackjack" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>BlackJack - Browser-based Card Game</h2>
+                <p>This project is a browser-based implementation of the classic casino game, Blackjack, using only HTML, CSS, and JavaScript.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Fully functional Blackjack game logic</li>
+                    <li>Interactive user interface for gameplay</li>
+                    <li>Score tracking and win/loss statistics</li>
+                    <li>Responsive design for various screen sizes</li>
+                </ul>
+                <h3>Technical Details:</h3>
+                <ul>
+                    <li>HTML5 for structure</li>
+                    <li>CSS3 for styling and animations</li>
+                    <li>Vanilla JavaScript for game logic and DOM manipulation</li>
+                    <li>LocalStorage for persisting game stats</li>
+                </ul>
+                <h3>Challenges Overcome:</h3>
+                <p>A key challenge was implementing the complex rules of Blackjack, including handling Aces as 1 or 11. We solved this by creating a flexible scoring system that automatically adjusts the value of Aces based on the current hand.</p>
+                <h3>Learning Outcomes:</h3>
+                <ul>
+                    <li>Strengthened core web development skills</li>
+                    <li>Improved understanding of game logic implementation</li>
+                    <li>Enhanced skills in creating interactive web applications without frameworks</li>
+                </ul>
+            </div>
+        </div>    </section>
     <section class="fade-in" id="mobile-apps">
         <h2 class="section-title">Mobile Apps</h2>
         <div class="projects">

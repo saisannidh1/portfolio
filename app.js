@@ -168,3 +168,36 @@ document.addEventListener('DOMContentLoaded', function() {
         fadeObserver.observe(element);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Existing code...
+
+    // Modal functionality
+    const modals = document.querySelectorAll('.modal');
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    const closeBtns = document.querySelectorAll('.close');
+
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const projectCard = this.closest('.project-card');
+            const projectId = projectCard.dataset.project;
+            const modal = document.getElementById(`modal-${projectId}`);
+            modal.style.display = 'block';
+        });
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            modal.style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});
