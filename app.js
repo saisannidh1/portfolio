@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -169,34 +169,80 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Existing code...
-
-    // Modal functionality
+document.addEventListener('DOMContentLoaded', function () {
     const modals = document.querySelectorAll('.modal');
     const readMoreBtns = document.querySelectorAll('.read-more-btn');
     const closeBtns = document.querySelectorAll('.close');
 
+    function openModal(modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        positionModal(modal);
+    }
+
+    function closeModal(modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    }
+
+    function closeAllModals() {
+        modals.forEach(modal => {
+            closeModal(modal);
+        });
+    }
+
+    function positionModal(modal) {
+        const modalContent = modal.querySelector('.modal-content');
+        const windowHeight = window.innerHeight;
+        const modalHeight = modalContent.offsetHeight;
+
+        if (modalHeight > windowHeight) {
+            modal.style.alignItems = 'flex-start';
+            modalContent.style.marginTop = '20px';
+            modalContent.style.marginBottom = '20px';
+        } else {
+            modal.style.alignItems = 'center';
+            modalContent.style.marginTop = '0';
+            modalContent.style.marginBottom = '0';
+        }
+    }
+
     readMoreBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent event from bubbling up
             const projectCard = this.closest('.project-card');
             const projectId = projectCard.dataset.project;
             const modal = document.getElementById(`modal-${projectId}`);
-            modal.style.display = 'block';
+            openModal(modal);
         });
     });
 
     closeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent event from bubbling up
             const modal = this.closest('.modal');
-            modal.style.display = 'none';
+            closeModal(modal);
         });
     });
 
-    window.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
+        if (!event.target.closest('.modal-content') && !event.target.closest('.read-more-btn')) {
+            closeAllModals();
+        }
+    });
+
+    modals.forEach(modal => {
+        modal.addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeModal(this);
+            }
+        });
+    });
+
+    window.addEventListener('resize', function () {
         modals.forEach(modal => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
+            if (modal.classList.contains('active')) {
+                positionModal(modal);
             }
         });
     });
