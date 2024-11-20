@@ -1,11 +1,25 @@
 /* ==========================================================================
-   Imports
+   Table of Contents
+   1. Imports
+   2. Variables
+   3. Base Styles
+   4. Layout
+   5. Typography
+   6. Header & Navigation
+   7. Main Content Sections
+   8. Footer
+   9. Utility Classes
+   10. Animations
+   11. Media Queries
+   12. Interactive Elements
+   ========================================================================== */
+
+/* 1. Imports
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-/* ==========================================================================
-   Variables
+/* 2. Variables
    ========================================================================== */
 :root {
     --accent-color: rgb(34, 171, 221);
@@ -20,8 +34,7 @@
     --button-hover-gradient: linear-gradient(135deg, #0072FF 0%, #00C6FF 100%);
 }
 
-/* ==========================================================================
-   Base Styles
+/* 3. Base Styles
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -43,8 +56,28 @@ body {
     z-index: -1;
 }
 
-/* ==========================================================================
-   Header & Navigation
+/* 4. Layout
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+/* 5. Typography
+   ========================================================================== */
+h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ffffff;
+    position: relative;
+}
+
+/* 6. Header & Navigation
    ========================================================================== */
 header {
     position: sticky;
@@ -60,7 +93,6 @@ header {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 
 .header-wrapper {
     position: sticky;
@@ -86,7 +118,6 @@ nav a:hover {
     background-color: var(--accent-color);
 }
 
-/* Mobile Menu */
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -94,7 +125,6 @@ nav a:hover {
     background: none;
     border: none;
     cursor: pointer;
-
 }
 
 .mobile-menu span {
@@ -105,32 +135,8 @@ nav a:hover {
     transition: all 0.3s ease;
 }
 
-/* ==========================================================================
-   Main Content
+/* 7. Main Content Sections
    ========================================================================== */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-}
-
-/* Profile Section */
-.profile-section {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.profile-img {
-    width: 400px;
-    height: 400px;
-    border-radius: 20%;
-    object-fit: cover;
-}
 
 /* Welcome Section */
 .welcome {
@@ -138,7 +144,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .welcome-content {
@@ -164,6 +169,7 @@ main {
     font-size: 2rem;
     color: #cccccc;
     line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 .subtitle {
@@ -173,27 +179,22 @@ main {
     line-height: 1.2;
 }
 
-.wave {
-    display: inline-block;
-    animation: wave 2s infinite;
-    transform-origin: 70% 70%;
-}
-
-/* ==========================================================================
-   Skills Section
-   ========================================================================== */
-#skills {
-
-}
-
-.h2 {
-    text-align: center;
+/* Profile Section */
+.profile-section {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
     margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: #ffffff;
-    position: relative;
 }
 
+.profile-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 20%;
+    object-fit: cover;
+}
+
+/* Skills Section */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -252,9 +253,7 @@ main {
     color: white;
 }
 
-/* ==========================================================================
-   Projects Section
-   ========================================================================== */
+/* Projects Section */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -271,17 +270,16 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-
-.project-card p {
-    flex-grow: 1;
-    margin-bottom: 1rem;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-card p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
 }
 
 .app-logo {
@@ -290,7 +288,6 @@ main {
     margin-bottom: 15px;
 }
 
-/* Project Tech Stack */
 .tech-stack {
     display: flex;
     gap: 1rem;
@@ -314,7 +311,6 @@ main {
     color: #333;
 }
 
-/* Project Links */
 .project-links {
     display: flex;
     gap: 1rem;
@@ -331,9 +327,7 @@ main {
     color: #0056b3;
 }
 
-/* ==========================================================================
-   Languages Section
-   ========================================================================== */
+/* Languages Section */
 .languages {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -384,16 +378,13 @@ main {
     margin-top: 0.5rem;
 }
 
-/* ==========================================================================
-   Resume Section
-   ========================================================================== */
+/* Resume Section */
 #resume {
     margin-top: 100px;
     padding: 0;
     position: relative;
 }
 
-/* Timeline */
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -451,7 +442,7 @@ main {
     transition: transform 0.3s ease;
 }
 
-.timeline-content h3{
+.timeline-content h3 {
     font-size: 1.5rem;
 }
 
@@ -460,7 +451,6 @@ main {
     box-shadow: var(--hover-shadow);
 }
 
-/* Resume Buttons */
 .resume-buttons {
     text-align: left;
     margin-top: 1rem;
@@ -480,14 +470,13 @@ main {
     border: none;
 }
 
-.download-cv:hover {
+.download-cv:hover,
+.copy-button:hover {
     background-image: var(--button-hover-gradient);
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   Certificates Section
-   ========================================================================== */
+/* Certificates Section */
 .certificates {
     padding: 1rem;
     position: relative;
@@ -544,21 +533,7 @@ main {
     z-index: -0.5;
 }
 
-#more-certificates.hidden {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-#more-certificates:not(.hidden) {
-    display: block;
-    opacity: 1;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* ==========================================================================
-   Footer
+/* 8. Footer
    ========================================================================== */
 footer {
     background-color: var(--card-bg);
@@ -596,8 +571,7 @@ footer {
     color: #ffffff;
 }
 
-/* ==========================================================================
-   Utility Classes
+/* 9. Utility Classes
    ========================================================================== */
 .hidden {
     display: none;
@@ -609,25 +583,11 @@ footer {
     margin-top: auto;
 }
 
-/* ==========================================================================
-   Animations
+/* 10. Animations
    ========================================================================== */
-@keyframes wave {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(20deg);
-    }
-}
-
 @keyframes slide {
-    0% {
-        transform: translateX(-25%);
-    }
-    100% {
-        transform: translateX(25%);
-    }
+    0% { transform: translateX(-25%); }
+    100% { transform: translateX(25%); }
 }
 
 @keyframes slideIn {
@@ -640,31 +600,35 @@ footer {
         transform: translateX(0);
     }
 }
-
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) rotate(45deg);
-    }
-    40% {
-        transform: translateY(-30px) rotate(45deg);
-    }
-    60% {
-        transform: translateY(-15px) rotate(45deg);
-    }
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
+    40% { transform: translateY(-30px) rotate(45deg); }
+    60% { transform: translateY(-15px) rotate(45deg); }
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
-/* ==========================================================================
-   Background Effects
-   ========================================================================== */
+.wave {
+    display: inline-block;
+    animation: wave-animation 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }
+    100% { transform: rotate( 0.0deg) }
+}
+
+/* Background Effects */
 .bg-overlay {
     position: fixed;
     top: 0;
@@ -696,8 +660,7 @@ footer {
     animation-duration: 15s;
 }
 
-/* ==========================================================================
-   Media Queries
+/* 11. Media Queries
    ========================================================================== */
 @media (max-width: 768px) {
     header {
@@ -762,11 +725,9 @@ footer {
         font-weight: bold;
     }
 
-
-    /* Welcome section adjustments */
     .welcome-content {
-        width: 90%; /* Slightly wider for better text wrapping */
-        gap: 0.5rem; /* Increased gap for better readability */
+        width: 90%;
+        gap: 0.5rem;
     }
 
     .welcome-content .greeting {
@@ -774,24 +735,19 @@ footer {
     }
 
     .welcome-content h1 {
-        font-size: 2.1rem; /* Smaller heading */
+        font-size: 2.1rem;
     }
 
-    .welcome-content h2 {
-        font-size: 1.25rem; /* Smaller heading */
-    }
-
+    .welcome-content h2,
     .welcome-content h3 {
-        font-size: 1.25rem; /* Smaller heading */
+        font-size: 1.25rem;
     }
 
     .welcome-content p {
-        font-size: 0.9rem; /* Smaller paragraph text */
-        line-height: 1.4; /* Adjusted line height */
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
 
-
-    /* Layout */
     .profile-section {
         flex-direction: column;
         text-align: center;
@@ -801,7 +757,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Timeline */
     .timeline::before {
         left: 31px;
     }
@@ -828,12 +783,10 @@ footer {
         margin: 0;
     }
 
-    /* Languages */
     .languages {
         grid-template-columns: 1fr;
     }
 
-    /* Certificates */
     .certificate::after {
         border-width: 0 40px 40px 0;
     }
@@ -848,14 +801,16 @@ footer {
         width: 100%;
     }
 
-    .contact-container {
+    .contact-container,
+    .resume-buttons {
         display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
+        flex-direction: column;
+        align-items: center;
         gap: 15px;
     }
 
-    .copy-button {
+    .copy-button,
+    .download-cv {
         display: flex;
         align-items: center;
     }
@@ -883,38 +838,16 @@ footer {
         font-size: 40px;
         color: #ffffff;
     }
-
-    .resume-buttons {
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        gap: 15px;
-    }
-
-    .download-cv {
-        display: flex;
-        align-items: center;
-    }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px), (hover: none) {
     .scroll-indicator {
         display: none;
     }
 }
 
-/* Optional: Hide on devices that don't support hover */
-@media (hover: none) {
-    .scroll-indicator {
-        display: none;
-    }
-}
-
-/* ==========================================================================c
-   Interactive Elements
+/* 12. Interactive Elements
    ========================================================================== */
-
-/* Scroll to Top Button */
 .scroll-top-btn {
     height: 45px;
     width: 60px;
@@ -937,7 +870,6 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Load More Button */
 .load-more-btn {
     align-self: center;
     margin-top: 1rem;
@@ -956,7 +888,6 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Contact Section */
 .contact-container {
     display: flex;
     align-items: center;
@@ -985,12 +916,6 @@ footer {
     text-decoration: underline;
 }
 
-
-.copy-button:hover {
-    background-image: var(--button-hover-gradient);
-    transform: translateY(-2px);
-}
-
 .scroll-indicator {
     position: fixed;
     top: 80vh;
@@ -1000,7 +925,7 @@ footer {
     color: white;
     font-family: Arial, sans-serif;
     opacity: 1;
-    transition: opacity 0.5s ease; /* Added transition for fading */
+    transition: opacity 0.5s ease;
     animation: float 6s ease-in-out infinite;
 }
 
@@ -1042,7 +967,7 @@ footer {
 
 .modal {
     position: fixed;
-    z-index: 10000; /* Increased z-index to ensure it's above all other elements */
+    z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
@@ -1070,7 +995,7 @@ footer {
     max-width: 800px;
     border-radius: 10px;
     position: relative;
-    max-height: calc(100vh - 40px); /* Adjust max-height to account for potential margins */
+    max-height: calc(100vh - 40px);
     overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: scale(0.7);
@@ -1099,7 +1024,7 @@ footer {
 
 .modal-content h2 {
     color: #0984e3;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .modal-content h3 {
