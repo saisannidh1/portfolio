@@ -81,7 +81,7 @@
             </div>
             <div class="resume-buttons">
                 <a class="download-cv" download href="assets/docs/Hugo%20Monteiro.pdf">
-                    <i class="fas fa-download"></i> Download Resume</a>
+                    <i class="fas fa-download"></i>Resume</a>
             </div>
         </div>
 
@@ -268,12 +268,14 @@
         <h2>Projects</h2>
         <h3>Current project</h3>
         <div class="current-project">
-            <div class="current-project-card full-width">
+            <div class="current-project-card project-card full-width" data-project="dashboard">
                 <div class="project-content">
-                    <img class="project-image" src="assets/images/personal-dashboard/dashboard.png" alt="Personal Dashboard"/>
+                    <img alt="Personal Dashboard" class="project-image"
+                         src="assets/images/personal-dashboard/dashboard.png"/>
                     <div class="project-text">
                         <h3>Personal Dashboard</h3>
-                        <p>This is a dashboard project in React and TailwindCSS that incorporates several APIs, for weather, news, Spotify and others, in a way to provide information at a glance.</p>
+                        <p>This is a dashboard project in React and TailwindCSS that incorporates several APIs, for
+                            weather, news, Spotify and others, in a way to provide information at a glance.</p>
                         <div class="tech-stack">
                             <span class="tech-icon"><i class="fab fa-react tech-icon"></i></span>
                             <span class="tech-icon"><i class="fa-solid fa-wind tech-icon"></i></span>
@@ -399,6 +401,49 @@
     </section>
 
 </main>
+
+<div class="modal" id="modal-dashboard">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Personal Dashboard</h2>
+        <a class="view-project-btn" href="https://github.com/HugoMonteiro12/Personal-dashboard" target="_blank">View
+            Project</a>
+        <p class="modal-short-description">A comprehensive dashboard application that aggregates multiple API services
+            to provide personalized information at a glance.</p>
+        <hr class="modal-separator">
+        <div class="modal-long-description">
+            <p>Personal Dashboard is an all-in-one information hub that brings together various APIs to create a
+                personalized dashboard experience. The application serves as a central point for accessing daily
+                information, from weather updates to your favorite music.</p>
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Real-time weather updates with detailed forecasts</li>
+                <li>Personalized news feed with customizable categories</li>
+                <li>Spotify integration for music control and current track display</li>
+                <li>Quick-access widgets for commonly used information</li>
+                <li>Customizable layout and widget positioning</li>
+            </ul>
+            <h3>Technical Details:</h3>
+            <ul>
+                <li>Frontend: React.js with modern Hooks and Context API</li>
+                <li>Styling: TailwindCSS for responsive and efficient styling</li>
+                <li>API Integration: Multiple REST APIs including Weather, News, and Spotify</li>
+                <li>State Management: Custom hooks for efficient state handling</li>
+                <li>Design: Figma-based design system for consistent UI components</li>
+            </ul>
+            <h3>Challenges Overcome:</h3>
+            <p>A significant challenge was managing multiple API calls efficiently without overwhelming the
+                application's performance. We implemented a custom caching system and optimized API calls using
+                debouncing techniques, resulting in a smooth and responsive user experience while maintaining real-time
+                data updates.</p>
+            <h3>Future Improvements:</h3>
+            <ul>
+                <li>Add support for more third-party integrations (Calendar, Tasks, etc.)</li>
+                <li>Add user accounts for saved preferences across devices</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <div class="modal" id="modal-ecoal23">
     <div class="modal-content">
