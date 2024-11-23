@@ -520,6 +520,10 @@ nav a:hover {
     margin: 0;
 }
 
+.certificate div{
+    display: flex;
+}
+
 .certificate::after {
     content: '';
     position: absolute;
@@ -535,6 +539,21 @@ nav a:hover {
     z-index: -0.5;
 }
 
+.certificate-btn{
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 /* 8. Footer
    ========================================================================== */
 footer {
@@ -1182,4 +1201,3 @@ footer {
     height: 300px;
     border-radius: 8px;
 }
-
