@@ -871,6 +871,27 @@ footer {
         font-size: 40px;
         color: #ffffff;
     }
+    .project-content {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .current-project-card {
+        flex-direction: column; /* Ensure the card content stacks vertically */
+        align-items: center; /* Center the card content */
+    }
+
+    .project-image {
+        margin: 0 0 20px 0; /* Remove right margin and add bottom margin */
+        width: 100%; /* Make the image responsive */
+    }
+
+    .current-project-card h3 {
+        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    .current-project-card p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+    }
 }
 
 @media only screen and (max-width: 768px), (hover: none) {
