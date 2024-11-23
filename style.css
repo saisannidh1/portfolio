@@ -264,6 +264,8 @@ nav a:hover {
 .project-card {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-start;
     background-color: rgba(45, 45, 45, 0.9);
     border-radius: 8px;
     padding: 1.5rem;
@@ -1103,3 +1105,60 @@ footer {
 .modal-long-description {
     line-height: 1.6;
 }
+
+/*.project-card[data-project="ecoal23"] {
+    background:
+            linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, #333333 50%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 20%),
+            url('assets/images/eCoal23/Home.png') 0 0 / cover no-repeat;
+}*/
+
+.current-project {
+    width: 100%;
+}
+.project-content {
+    display: flex;
+}
+
+.current-project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-start;
+    background-color: rgba(45, 45, 45, 0.9);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current-project-card:hover {
+     transform: translateY(-8px);
+     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+ }
+
+.current-project-card p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+.current-project-card h3 {
+    margin: 0;
+    font-size: 2rem;
+}
+.project-text {
+    color: white;
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.project-image {
+    margin-right: 20px;
+    height: 300px;
+    border-radius: 8px;
+}
+
