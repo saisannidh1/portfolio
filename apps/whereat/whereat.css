@@ -225,7 +225,7 @@ nav a:hover {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent-color), rgba(249, 249, 249, 0.98));
+    background: linear-gradient(90deg, var(--whereat-accent-color), rgba(249, 249, 249, 0.98));
 }
 
 .cta-button {
@@ -233,7 +233,7 @@ nav a:hover {
     align-items: center;
     gap: 0.5rem;
     background-image: var(--whereat-button-gradient);
-    color: var(--text-color);
+    color: var(--whereat-accent-color);
     text-decoration: none;
     padding: 1rem 2rem;
     border-radius: 10px;

@@ -455,6 +455,15 @@ nav a:hover {
     box-shadow: var(--hover-shadow);
 }
 
+.timeline-details li{
+    font-size: 1rem;
+}
+
+.timeline-details a {
+    text-decoration: underline;
+    color: var(--text-color);
+}
+
 .resume-buttons {
     text-align: left;
     margin-top: 1rem;
