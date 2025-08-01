@@ -10,6 +10,7 @@ function initializeApp() {
     initializeScrollIndicator();
     initializeFadeEffects();
     initializeModals();
+    initializeContactForm();
 }
 
 // Mobile Menu Functionality
@@ -68,6 +69,123 @@ function initializeScrollToTop() {
     });
 }
 
+// Contact Form Functionality
+function initializeContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+
+    // Form submission is handled by the DOMContentLoaded listener below
+    // This function is kept for compatibility but doesn't add event listeners
+}
+
+function showContactSuccess() {
+    // Create success message element
+    const successMessage = document.createElement('div');
+    successMessage.className = 'contact-success';
+    successMessage.innerHTML = `
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <h4>Message Sent Successfully!</h4>
+            <p>Thank you for reaching out. I'll get back to you soon!</p>
+        </div>
+    `;
+    
+    // Add styles
+    successMessage.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+    `;
+    
+    successMessage.querySelector('.success-content').style.cssText = `
+        text-align: center;
+    `;
+    
+    successMessage.querySelector('i').style.cssText = `
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    `;
+    
+    successMessage.querySelector('h4').style.cssText = `
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+    `;
+    
+    successMessage.querySelector('p').style.cssText = `
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    `;
+    
+    // Add to page
+    document.body.appendChild(successMessage);
+    
+    // Animate in
+    setTimeout(() => {
+        successMessage.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        successMessage.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            document.body.removeChild(successMessage);
+        }, 300);
+    }, 5000);
+}
+
+// Enhanced Email Copy Functionality for Contact Section
+function copyEmail() {
+    const email = 'saisannidhs@gmail.com';
+    const buttons = document.querySelectorAll('.copy-button, .copy-email-btn');
+
+    navigator.clipboard.writeText(email).then(() => {
+        buttons.forEach(button => {
+            if (!button) return;
+
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Email Copied!';
+            button.style.background = 'var(--accent-color)';
+            button.style.color = 'white';
+
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = '';
+                button.style.color = '';
+            }, 2000);
+        });
+    }).catch(err => {
+        console.error('Failed to copy email:', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // Show success message
+        buttons.forEach(button => {
+            if (!button) return;
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i> Email Copied!';
+            setTimeout(() => {
+                button.innerHTML = originalText;
+            }, 2000);
+        });
+    });
+}
+
 // Timeline Animation
 function initializeTimeline() {
     const observer = new IntersectionObserver(
@@ -98,22 +216,7 @@ function initializeCertificates() {
     });
 }
 
-// Email Copy Functionality
-function copyEmail() {
-    const email = 'hugondarez@gmail.com';
-    const button = document.querySelector('.copy-button');
-
-    navigator.clipboard.writeText(email).then(() => {
-        if (!button) return;
-
-        const originalText = button.innerHTML;
-        button.innerHTML = '<i class="fas fa-check"></i> Email Copied!';
-
-        setTimeout(() => {
-            button.innerHTML = originalText;
-        }, 2000);
-    });
-}
+// Email Copy Functionality (removed duplicate - using the enhanced version above)
 
 // Navigation Highlighting
 function initializeNavigation() {
@@ -250,4 +353,120 @@ function initializeModals() {
             }
         });
     });
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    // Add loading state to submit button
+    const submitBtn = form.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.innerHTML;
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(form);
+
+        fetch('https://formsubmit.co/ajax/2cb9bef7ee110c6765f59788afbf3db5', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success === 'true') {
+                // ✅ Show your success popup here
+                showContactSuccess();
+
+                // Reset the form
+                form.reset();
+            } else {
+                showContactError('Something went wrong. Please try again.');
+            }
+        })
+        .catch(error => {
+            showContactError('Unable to send message. Please check your connection and try again.');
+            console.error(error);
+        })
+        .finally(() => {
+            // Reset button state
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+        });
+    });
+});
+
+// Add error notification function
+function showContactError(message) {
+    const errorMessage = document.createElement('div');
+    errorMessage.className = 'contact-error';
+    errorMessage.innerHTML = `
+        <div class="error-content">
+            <i class="fas fa-exclamation-circle"></i>
+            <h4>Error</h4>
+            <p>${message}</p>
+        </div>
+    `;
+    
+    // Add styles
+    errorMessage.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+    `;
+    
+    errorMessage.querySelector('.error-content').style.cssText = `
+        text-align: center;
+    `;
+    
+    errorMessage.querySelector('i').style.cssText = `
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    `;
+    
+    errorMessage.querySelector('h4').style.cssText = `
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+    `;
+    
+    errorMessage.querySelector('p').style.cssText = `
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    `;
+    
+    // Add to page
+    document.body.appendChild(errorMessage);
+    
+    // Animate in
+    setTimeout(() => {
+        errorMessage.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        errorMessage.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            document.body.removeChild(errorMessage);
+        }, 300);
+    }, 5000);
 }
